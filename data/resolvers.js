@@ -1,16 +1,23 @@
-import { models  } from './connectors';
+import { models } from './connectors';
 
 const { author } = models;
 
 const resolvers = {
   Query: {
     author(_, args) {
+      console.log('Author get args', args);
       return author.find({ where: args });
     },
     getFortuneCookie() {
       return {  };
         // return FortuneCookie.getOne();
     }
+  },
+  Mutation: {
+    createAuthor(_, args) {
+      console.log('Author create args', args);
+      return author.create(args);
+    },
   },
   Author: {
     posts(author) {

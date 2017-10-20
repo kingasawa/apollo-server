@@ -1,0 +1,15 @@
+mutation createAuthor($firstName: String, $lastName: String){
+    createAuthor(firstName: $firstName, lastName: $lastName){
+        id
+        lastName
+        posts {
+            title
+        }
+    }
+}
+
+#{
+#    author {
+#        firstName
+#    }
+#}

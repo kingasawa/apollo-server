@@ -14,10 +14,15 @@ type Post {
 }
 
 type Query {
-    author(firstName: String, lastName: String): Author
+    author(id: Int, firstName: String, lastName: String): Author
     post(id: Int): Post
     getFortuneCookie: String # we'll use this later
 }
+
+type Mutation {
+    createAuthor(firstName: String, lastName: String): Author
+}
 schema {
     query: Query
+    mutation: Mutation
 }
