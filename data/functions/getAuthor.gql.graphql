@@ -1,0 +1,5 @@
+query getAuthor($firstName: String, $lastName: String){
+    author(firstName: $firstName, lastName: $lastName){
+        id
+    }
+}
