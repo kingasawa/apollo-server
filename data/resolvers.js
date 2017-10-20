@@ -1,12 +1,15 @@
-import { Author, View, FortuneCookie } from './connectors';
+import { models  } from './connectors';
+
+const { author } = models;
 
 const resolvers = {
   Query: {
     author(_, args) {
-      return Author.find({ where: args });
+      return author.find({ where: args });
     },
     getFortuneCookie() {
-        return FortuneCookie.getOne();
+      return {  };
+        // return FortuneCookie.getOne();
     }
   },
   Author: {
@@ -19,8 +22,9 @@ const resolvers = {
       return post.getAuthor();
     },
     views(post) {
-      return View.findOne({ postId: post.id })
-             .then((view) => view.views);
+      return 1;
+      // return View.findOne({ postId: post.id })
+      //        .then((view) => view.views);
     },
   },
 };
